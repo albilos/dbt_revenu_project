@@ -1,0 +1,23 @@
+
+version: 2
+
+sources:
+  - name: public
+    tables:
+      - name: orders
+      - name: customers
+
+
+models:
+  - name: customer_revenue
+    description: "Table calculant les revenus par client"
+    columns:
+      - name: customer_id
+        description: "L'identifiant du client"
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        description: "Le nom du client"
+        tests:
+          - not_null
